@@ -45,6 +45,23 @@ p, div, label, input, .stTextInput {{
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
 }}
+
+/* Footer styling */
+footer {{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}}
+
+footer p {{
+    font-size: 14px;
+    color: white;
+}}
 </style>
 '''
 
@@ -158,3 +175,18 @@ if st.button("⚙️ Generate Strong Password"):
 # Display the generated password even after re-render
 if st.session_state.generated_password:
     st.write(f"Generated Password: `{st.session_state.generated_password}`")
+
+# -------------------------
+# Footer Section
+# -------------------------
+
+# Footer HTML using custom CSS and emojis
+footer = """
+<footer>
+    <p>👨‍💻 Developed by <strong>[ Syeda Hifza ]</strong> | © 2025 All rights reserved.</p>
+    <p>🌐 Connect with me on <a href="https://www.linkedin.com/in/syeda-hifza-a06252348" target="_blank" style="color: #00acee;">LinkedIn</a> 💼</p>
+</footer>
+"""
+
+# Add the footer to the app
+st.markdown(footer, unsafe_allow_html=True)
