@@ -10,8 +10,11 @@ def get_base64_image(image_file):
         encoded_string = base64.b64encode(img_file.read()).decode()
     return encoded_string
 
+# The image is in the 'image.png' 
+image_path = "C:/Users/MUHAMMAD PC/3D Objects/Password_Strength_Meter/image.jpg"
+
 # Add custom CSS for background image from the local file
-image_base64 = get_base64_image("C:/Users/MUHAMMAD PC/3D Objects/Password_Strength_Meter/image.jpg")  # Path to the image uploaded
+image_base64 = get_base64_image("{image_path}")  # Path to the image uploaded
 
 page_bg_img = f'''
 <style>
