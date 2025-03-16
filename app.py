@@ -4,22 +4,14 @@ import secrets
 import string
 import streamlit as st
 
-# Function to load image and convert to base64
-def get_base64_image(image_file):
-    with open(image_file, "rb") as img_file:
-        encoded_string = base64.b64encode(img_file.read()).decode()
-    return encoded_string
+# Hosted image URL (replace with your actual URL)
+image_url = ""  # Hosted image URL
 
-# The image is in the 'image.png' 
-image_path = "C:/Users/MUHAMMAD PC/3D Objects/Password_Strength_Meter/image.jpg"
-
-# Add custom CSS for background image from the local file
-image_base64 = get_base64_image("{image_path}")  # Path to the image uploaded
-
+# Add custom CSS for background image from the hosted URL
 page_bg_img = f'''
 <style>
 .stApp {{
-    background-image: url("data:image/png;base64,{image_base64}");
+    background-image: url("{image_url}");
     background-size: cover;
     background-position: center;
     color: white;
@@ -146,7 +138,7 @@ def generate_strong_password(length=12):
 # -------------------------
 
 # Title and description with emojis
-st.title("🔐 Enhanced Password Strength Meter")
+st.title("🔐 SecurePass: Advanced Password Strength Analyzer")
 st.write("🔍 **Check how strong your password is, and get suggestions to improve it!**")
 
 # Input area for password check
@@ -186,10 +178,11 @@ if st.session_state.generated_password:
 # Footer HTML using custom CSS and emojis
 footer = """
 <footer>
-    <p>👨‍💻 Developed by <strong>[ Syeda Hifza ]</strong> | © 2025 All rights reserved.</p>
+    <p>👨‍💻 Developed by <strong>[Syeda Hifza]</strong> | © 2025 All rights reserved.</p>
     <p>🌐 Connect with me on <a href="https://www.linkedin.com/in/syeda-hifza-a06252348" target="_blank" style="color: #00acee;">LinkedIn</a> 💼</p>
 </footer>
 """
 
 # Add the footer to the app
 st.markdown(footer, unsafe_allow_html=True)
+
