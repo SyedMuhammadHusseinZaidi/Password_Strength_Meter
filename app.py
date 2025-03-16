@@ -5,7 +5,7 @@ import string
 import streamlit as st
 
 # Hosted image URL (replace with your actual URL)
-image_url = ""  # Hosted image URL
+image_url = "https://github.com/SyedMuhammadHusseinZaidi/Password_Strength_Meter/blob/main/image.jpg"  # Hosted image URL
 
 # Add custom CSS for background image from the hosted URL
 page_bg_img = f'''
