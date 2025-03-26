@@ -4,8 +4,8 @@ import secrets
 import string
 import streamlit as st
 
-# Hosted image URL (replace with your actual URL)
-image_url = "https://github.com/SyedMuhammadHusseinZaidi/Password_Strength_Meter/blob/main/image.jpg"  # Hosted image URL
+# Hosted image URL
+image_url = "https://www.instagram.com/p/DHq4c0uMwCo"
 
 # Add custom CSS for background image from the hosted URL
 page_bg_img = f'''
@@ -14,7 +14,7 @@ page_bg_img = f'''
     background-image: url("{image_url}");
     background-size: cover;
     background-position: center;
-    color: white;
+    
 }}
 
 h1, h2, h3, h4, h5 {{
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5 {{
 }}
 
 p, div, label, input, .stTextInput {{
-    color: #ffffff !important; /* White for general text */
+    color: red !important; /* White for general text */
 }}
 
 .stAlert {{
@@ -175,7 +175,7 @@ if st.session_state.generated_password:
 # Footer Section
 # -------------------------
 
-# Footer HTML using custom CSS and emojis
+# Footer HTML using custom CSS
 footer = """
 <footer>
     <p>👨‍💻 Developed by <strong>[Syeda Hifza]</strong> | © 2025 All rights reserved.</p>
@@ -185,4 +185,3 @@ footer = """
 
 # Add the footer to the app
 st.markdown(footer, unsafe_allow_html=True)
-
