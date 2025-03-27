@@ -1,48 +1,44 @@
-import base64
 import re
 import secrets
 import string
 import streamlit as st
 
-# Hosted image URL
-image_url = "https://www.instagram.com/p/DHq4c0uMwCo"
-
-# Add custom CSS for background image from the hosted URL
-page_bg_img = f'''
+# Add custom CSS for a gradient background
+page_bg_gradient = '''
 <style>
-.stApp {{
-    background-image: url("{image_url}");
+.stApp {
+    background: linear-gradient(to right, #1f4037, #99f2c8);  /* Dark green to light green gradient */
     background-size: cover;
     background-position: center;
-    
-}}
+    color: white;
+}
 
-h1, h2, h3, h4, h5 {{
+h1, h2, h3, h4, h5 {
     color: #f5f5f5; /* Light grey for headings */
-}}
+}
 
-p, div, label, input, .stTextInput {{
-    color: red !important; /* White for general text */
-}}
+p, div, label, input, .stTextInput {
+    color: #ffffff !important; /* White for general text */
+}
 
-.stAlert {{
+.stAlert {
     background-color: rgba(255, 255, 255, 0.1); /* Transparent white background for alerts */
     border-color: white;
-}}
+}
 
-.stButton>button {{
+.stButton>button {
     color: white !important;
     background-color: rgba(255, 255, 255, 0.3) !important; /* Semi-transparent button */
     border: 2px solid white;
-}}
+}
 
-.stTextInput input {{
+.stTextInput input {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-}}
+}
 
 /* Footer styling */
-footer {{
+footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -51,17 +47,17 @@ footer {{
     color: white;
     text-align: center;
     padding: 10px;
-}}
+}
 
-footer p {{
+footer p {
     font-size: 14px;
     color: white;
-}}
+}
 </style>
 '''
 
-# Inject the custom CSS to add the background
-st.markdown(page_bg_img, unsafe_allow_html=True)
+# Inject the custom CSS for the gradient background
+st.markdown(page_bg_gradient, unsafe_allow_html=True)
 
 # List of common weak passwords (blacklist)
 COMMON_PASSWORDS = ["password", "123456", "123456789", "qwerty", "abc123", "password123", "letmein"]
@@ -134,11 +130,11 @@ def generate_strong_password(length=12):
             return password
 
 # -------------------------
-# Streamlit App with Background Image and Emojis
+# Streamlit App with Gradient Background and Emojis
 # -------------------------
 
 # Title and description with emojis
-st.title("🔐 SecurePass: Advanced Password Strength Analyzer")
+st.title("🔐 Professional Password Strength Meter")
 st.write("🔍 **Check how strong your password is, and get suggestions to improve it!**")
 
 # Input area for password check
@@ -171,11 +167,12 @@ if st.button("⚙️ Generate Strong Password"):
 if st.session_state.generated_password:
     st.write(f"Generated Password: `{st.session_state.generated_password}`")
 
+    
 # -------------------------
 # Footer Section
 # -------------------------
 
-# Footer HTML using custom CSS
+# Footer HTML using custom CSS and emojis
 footer = """
 <footer>
     <p>👨‍💻 Developed by <strong>[Syeda Hifza]</strong> | © 2025 All rights reserved.</p>
